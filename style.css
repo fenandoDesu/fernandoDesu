@@ -1,0 +1,132 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000000, #ffffff);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    background: linear-gradient(135deg, #ffffff, #d3d3d3);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 5px solid #000000;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 15px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    border: 4px solid #000000;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cell:hover {
+    background-color: #c0c0c0;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.cell.x::before {
+    content: 'X';
+    color: #000000;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.cell.o::before {
+    content: 'O';
+    color: #007bff;
+    text-shadow: 3px 3px 10px rgba(0, 123, 255, 0.7);
+}
+
+#botoes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+#botoes button {
+    flex: 1;
+    margin: 5px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #000000, #444444);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+#botoes button:hover {
+    background: linear-gradient(135deg, #444444, #000000);
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode {
+    background: linear-gradient(135deg, #111, #333);
+    color: #fff;
+}
+
+.dark-mode .game-container {
+    background: linear-gradient(135deg, #222, #444);
+    border-color: #fff;
+}
+
+.dark-mode .cell {
+    background: #555;
+    border-color: #fff;
+    color: #fff;
+}
+
+.dark-mode .cell.x::before {
+    color: #00ff00;
+}
+
+.dark-mode .cell.o::before {
+    color: #ff4500;
+}
+
+.dark-mode #botoes button {
+    background: linear-gradient(135deg, #222, #555);
+    color: white;
+}
+
+.dark-mode #botoes button:hover {
+    background: linear-gradient(135deg, #555, #777);
+}
